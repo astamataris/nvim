@@ -6,12 +6,10 @@ set ruler
 set rulerformat=%l,%v
 
 let mapleader = ","
-"enable emmet for html and css only
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
 
 map ` :Files<CR>
 map <C-o> :NERDTreeToggle<CR>
+let g:user_emmet_leader_key=','
 
 " Install vim-plug if not installed
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
