@@ -5,6 +5,14 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
 set ruler
 set rulerformat=%l,%v
 
+let mapleader = ","
+"enable emmet for html and css only
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
+map ` :Files<CR>
+map <C-o> :NERDTreeToggle<CR>
+
 " Install vim-plug if not installed
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
@@ -16,10 +24,15 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'davidhalter/jedi-vim'
 
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'mattn/emmet-vim'
 
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
+Plug 'scrooloose/nerdtree'
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " enables completion of file paths
 Plug 'ncm2/ncm2-path'
